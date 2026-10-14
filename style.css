@@ -1,0 +1,100 @@
+/* Custom Styles & Animation Enhancements for Tejashri Patil's Portfolio */
+
+/* Custom Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  border-radius: 9999px;
+  border: 2px solid #0b0f19;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* Base Smooth Transition */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.dark .glass {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Floating animation keyframes */
+@keyframes tilt {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(0.8deg);
+  }
+  75% {
+    transform: rotate(-0.8deg);
+  }
+}
+
+.animate-tilt {
+  animation: tilt 8s infinite linear;
+}
+
+/* Print Styles for Printable Resume */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-resume,
+  #printable-resume * {
+    visibility: visible;
+  }
+  #printable-resume {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 24px;
+    background: white !important;
+    color: black !important;
+  }
+  #resume-modal {
+    position: static;
+    display: block !important;
+    background: white !important;
+  }
+}
+
+/* Focus and active highlight states */
+.nav-link.active {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.dark .nav-link.active {
+  color: #818cf8;
+}
+
+/* Card hover perspective */
+.project-card {
+  will-change: transform;
+}

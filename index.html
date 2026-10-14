@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tejashri Patil | Computer Engineering Student & Developer</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Portfolio of Tejashri Dnyandev Patil - Second-year B.Tech Computer Engineering student at R.C. Patel Institute of Technology, Shirpur. Strong in Java, C, Python, SQL, DSA (2000+ problems solved on CodeChef), and web foundations." />
+  <meta name="keywords" content="Tejashri Patil, Computer Engineering, RCPIT Shirpur, CodeChef 2000+, Java, C, Python, SQL, DSA, Smart India Hackathon, Portfolio" />
+  <meta name="author" content="Tejashri Dnyandev Patil" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tejashri Patil | Computer Engineering Student & Developer" />
+  <meta property="og:description" content="Second-year B.Tech Computer Engineering student at RCPIT Shirpur. Solved 2000+ problems on CodeChef. Skilled in Java, C, Python, SQL, and DSA." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+            },
+            accent: {
+              teal: '#0d9488',
+              cyan: '#06b6d4',
+              amber: '#f59e0b',
+              emerald: '#10b981',
+            },
+            dark: {
+              bg: '#0b0f19',
+              card: '#111827',
+              surface: '#1f2937',
+              border: '#374151',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'Courier New', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-gray-50 text-gray-800 dark:bg-dark-bg dark:text-gray-100 font-sans antialiased selection:bg-brand-500 selection:text-white transition-colors duration-300">
+
+  <!-- ========================================================================= -->
+  <!-- NAVIGATION BAR                                                            -->
+  <!-- ========================================================================= -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b border-gray-200/60 dark:border-dark-border/60 bg-white/90 dark:bg-dark-bg/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Identity -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-indigo-700 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          TP
+        </div>
+        <div>
+          <span class="font-extrabold text-base sm:text-lg tracking-tight text-gray-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+            Tejashri Patil
+          </span>
+          <span class="block text-[11px] font-mono text-gray-500 dark:text-gray-400">Computer Engineering</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-600 dark:text-gray-300">
+        <a href="#home" class="nav-link hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Home</a>
+        <a href="#about" class="nav-link hover:text-brand-600 dark:hover:text-brand-400 transition-colors">About</a>
+        <a href="#skills" class="nav-link hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Skills</a>
+        <a href="#projects" class="nav-link hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Projects</a>
+        <a href="#experience" class="nav-link hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Experience</a>
+        <a href="#education" class="nav-link hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Education</a>
+        <a href="#contact" class="nav-link hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right Action Utilities -->
+      <div class="flex items-center gap-3">
+        <!-- Resume Modal Trigger -->
+        <button 
+          onclick="openResumeModal()" 
+          class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-300 border border-brand-200 dark:border-brand-700/60 hover:bg-brand-100 dark:hover:bg-brand-900/50 transition-all shadow-sm">
+          <i class="fa-solid fa-file-lines text-sm"></i>
+          <span>Resume</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button 
+          id="theme-toggle" 
+          aria-label="Toggle Dark and Light theme" 
+          class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-dark-surface text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 border border-gray-200 dark:border-dark-border flex items-center justify-center transition-all">
+          <i class="fa-solid fa-moon dark:hidden text-sm"></i>
+          <i class="fa-solid fa-sun hidden dark:inline text-sm text-amber-400"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          id="mobile-menu-btn" 
+          aria-label="Open mobile navigation" 
+          class="md:hidden w-10 h-10 rounded-xl bg-gray-100 dark:bg-dark-surface text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-dark-border flex items-center justify-center transition-all">
+          <i class="fa-solid fa-bars text-base"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-3 pb-6 border-b border-gray-200 dark:border-dark-border bg-white/95 dark:bg-dark-bg/95 backdrop-blur-lg">
+      <div class="flex flex-col space-y-3 text-sm font-medium">
+        <a href="#home" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-surface transition-colors">Home</a>
+        <a href="#about" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-surface transition-colors">About</a>
+        <a href="#skills" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-surface transition-colors">Skills</a>
+        <a href="#projects" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-surface transition-colors">Projects</a>
+        <a href="#experience" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-surface transition-colors">Experience</a>
+        <a href="#education" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-surface transition-colors">Education &amp; Milestones</a>
+        <a href="#contact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-surface transition-colors">Contact</a>
+        <button onclick="openResumeModal()" class="w-full text-left py-2 px-3 rounded-lg bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-300 font-semibold flex items-center gap-2">
+          <i class="fa-solid fa-file-lines"></i>
+          <span>View / Print Resume</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- HERO SECTION                                                              -->
+  <!-- ========================================================================= -->
+  <section id="home" class="relative pt-28 sm:pt-36 pb-16 sm:pb-24 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Left: Introduction Text & Actions -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Student Status Badge -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>2nd Year Computer Engineering &bull; RCPIT Shirpur</span>
+          </div>
+
+          <!-- Main Heading -->
+          <div>
+            <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400 font-mono mb-2">
+              Hello, I am
+            </h2>
+            <h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+              Tejashri <span class="text-brand-600 dark:text-brand-400">Patil</span>
+            </h1>
+          </div>
+
+          <!-- Dynamic Typist Role -->
+          <div class="flex items-center gap-2 text-lg sm:text-2xl font-semibold text-gray-700 dark:text-gray-300 font-mono">
+            <span class="text-brand-500">&gt;</span>
+            <span id="typing-text" class="text-brand-600 dark:text-brand-400 min-h-[1.75rem]">Computer Engineering Student</span>
+            <span class="animate-pulse text-brand-500 font-light">|</span>
+          </div>
+
+          <!-- Authentic Personal Bio Pitch -->
+          <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            I am a passionate software developer and second-year <strong>Computer Engineering</strong> student at 
+            <strong class="text-gray-900 dark:text-white">R.C. Patel Institute of Technology, Shirpur</strong>. 
+            I love logical problem solving, having solved <strong class="text-brand-600 dark:text-brand-400 font-bold">2000+ problems on CodeChef</strong> with a <strong class="text-brand-600 dark:text-brand-400 font-semibold">1000 CodeChef Rating</strong> and a <strong class="text-emerald-600 dark:text-emerald-400 font-semibold">1446 DSA Rating</strong>. 
+            My primary strength lies in core programming with <strong>Java, C, Python</strong>, <strong>SQL databases</strong>, and <strong>Data Structures &amp; Algorithms</strong>, alongside building web projects with <strong>HTML</strong> and expanding my skills in <strong>CSS</strong> and <strong>JavaScript</strong>.
+          </p>
+
+          <!-- Authentic Quick Badges -->
+          <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
+            <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800/50 font-medium">
+              <i class="fa-solid fa-trophy text-amber-500"></i> CodeChef: 1000 Rating (2000+ Solved)
+            </span>
+            <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50 font-medium">
+              <i class="fa-solid fa-chart-line text-emerald-500"></i> DSA Rating: 1446
+            </span>
+            <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800/50 font-medium">
+              <i class="fa-solid fa-lightbulb text-indigo-500"></i> Smart India Hackathon
+            </span>
+            <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-teal-50 dark:bg-teal-950/40 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800/50 font-medium">
+              <i class="fa-solid fa-briefcase text-teal-500"></i> CodeAlpha Intern
+            </span>
+            <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-dark-surface text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-dark-border">
+              <i class="fa-solid fa-award text-emerald-500"></i> MHT-CET: 92.91 %ile
+            </span>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <a href="#projects" class="px-5 py-3 rounded-xl font-semibold text-sm bg-brand-600 text-white shadow-md shadow-brand-500/20 hover:bg-brand-700 hover:-translate-y-0.5 transition-all flex items-center gap-2">
+              <span>View My Projects</span>
+              <i class="fa-solid fa-arrow-down text-xs"></i>
+            </a>
+
+            <button onclick="openResumeModal()" class="px-5 py-3 rounded-xl font-semibold text-sm bg-white dark:bg-dark-card text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-surface hover:-translate-y-0.5 transition-all flex items-center gap-2 shadow-sm">
+              <i class="fa-solid fa-file-lines text-brand-500"></i>
+              <span>View Resume</span>
+            </button>
+
+            <a href="#contact" class="px-5 py-3 rounded-xl font-semibold text-sm text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 flex items-center gap-1.5 transition-colors">
+              <i class="fa-regular fa-paper-plane"></i>
+              <span>Contact</span>
+            </a>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex items-center gap-3 pt-1">
+            <span class="text-xs uppercase font-mono text-gray-400">Connect:</span>
+            <a href="https://github.com/tejashripatil115" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="w-9 h-9 rounded-lg bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-500 transition-all">
+              <i class="fa-brands fa-github text-base"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/tejashri-patil-79966638a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="w-9 h-9 rounded-lg bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-500 transition-all">
+              <i class="fa-brands fa-linkedin-in text-base"></i>
+            </a>
+            <a href="mailto:tejashrip31@gmail.com" aria-label="Email Tejashri" class="w-9 h-9 rounded-lg bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-500 transition-all">
+              <i class="fa-solid fa-envelope text-base"></i>
+            </a>
+            <a href="tel:+919272096193" aria-label="Call Tejashri" class="w-9 h-9 rounded-lg bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-500 transition-all">
+              <i class="fa-solid fa-phone text-sm"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Real Student Portrait Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="w-full max-w-sm bg-white dark:bg-dark-card rounded-3xl p-5 sm:p-6 border border-gray-200 dark:border-dark-border shadow-xl">
+            
+            <!-- Real Photo Container -->
+            <div class="relative w-full aspect-[3/4] rounded-2xl overflow-hidden bg-gray-100 dark:bg-dark-surface border border-gray-200 dark:border-dark-border shadow-inner">
+              <img 
+                id="user-profile-img"
+                src="profile.jpg" 
+                alt="Tejashri Patil - B.Tech Computer Engineering Student" 
+                class="w-full h-full object-cover object-top"
+                onerror="if(this.dataset.fallback!=='1'){this.dataset.fallback='1';this.src='https://avatars.githubusercontent.com/u/313943807?v=4';}else{this.onerror=null;this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center font-bold text-4xl text-brand-600 font-mono\'>TP</div>';}"
+              />
+              
+              <!-- Subtle badge over photo -->
+              <div class="absolute bottom-3 left-3 right-3 px-3 py-2 rounded-xl bg-gray-900/80 backdrop-blur-md text-white text-xs flex items-center justify-between border border-white/20">
+                <span class="font-medium flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  RCPIT Shirpur
+                </span>
+                <span class="font-mono text-[11px] text-gray-300">Class of 2029</span>
+              </div>
+            </div>
+
+            <!-- Profile Info below photo -->
+            <div class="mt-4 pt-2 text-center">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">Tejashri D. Patil</h3>
+              <p class="text-xs font-semibold text-brand-600 dark:text-brand-400 mt-0.5">Computer Engineering Student</p>
+              
+              <!-- Core Skills Pill Row -->
+              <div class="flex flex-wrap justify-center gap-1.5 mt-3 pt-3 border-t border-gray-100 dark:border-dark-border text-[11px] font-mono text-gray-600 dark:text-gray-300">
+                <span class="px-2 py-0.5 rounded bg-gray-100 dark:bg-dark-surface">Java</span>
+                <span class="px-2 py-0.5 rounded bg-gray-100 dark:bg-dark-surface">C</span>
+                <span class="px-2 py-0.5 rounded bg-gray-100 dark:bg-dark-surface">Python</span>
+                <span class="px-2 py-0.5 rounded bg-gray-100 dark:bg-dark-surface">SQL</span>
+                <span class="px-2 py-0.5 rounded bg-gray-100 dark:bg-dark-surface">DSA</span>
+                <span class="px-2 py-0.5 rounded bg-gray-100 dark:bg-dark-surface">HTML</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- ABOUT ME SECTION                                                          -->
+  <!-- ========================================================================= -->
+  <section id="about" class="py-16 sm:py-20 border-t border-gray-200/70 dark:border-dark-border/70 bg-white dark:bg-dark-card/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mb-12">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">About Me</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight mt-1">
+          Engineering Student, Problem Solver &amp; Builder
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Left: Narrative -->
+        <div class="lg:col-span-7 space-y-4 text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p>
+            I am a second-year <strong>B.Tech Computer Engineering</strong> student at <strong>R.C. Patel Institute of Technology, Shirpur</strong>. My journey in tech started with a curiosity for how algorithms turn logic into real-world applications.
+          </p>
+          <p>
+            Competitive programming and Data Structures &amp; Algorithms are my primary focus. I have solved 
+            <strong class="text-brand-600 dark:text-brand-400">2000+ problems on CodeChef</strong>, holding a <strong class="text-brand-600 dark:text-brand-400">1000 CodeChef rating</strong> and a <strong class="text-emerald-600 dark:text-emerald-400">1446 DSA rating</strong> (with a CodeChef 500–1000 rating achievement certificate), and continuously challenge myself with daily problem solving across arrays, strings, searching, and sorting algorithms.
+          </p>
+          <p>
+            In my software development work, I am proficient in core languages including <strong>Java (Object-Oriented Programming)</strong>, <strong>C</strong>, <strong>Python</strong>, and <strong>SQL / Relational Databases</strong>. For web interfaces, I use <strong>HTML</strong> to create structured web layouts, and I am currently expanding my practical knowledge in <strong>CSS</strong> and <strong>JavaScript</strong> to build responsive, complete applications.
+          </p>
+          <p>
+            I also bring valuable exposure from participating in the national <strong>Smart India Hackathon 2026</strong>, completing a <strong>CodeAlpha Software Development Internship</strong>, and completing Deloitte's job simulations in Cyber Security and Data Analytics.
+          </p>
+        </div>
+
+        <!-- Right: Academic & Personal Quick Facts -->
+        <div class="lg:col-span-5 bg-gray-50 dark:bg-dark-card rounded-3xl p-6 border border-gray-200 dark:border-dark-border space-y-4">
+          <h3 class="text-base font-bold text-gray-900 dark:text-white flex items-center gap-2">
+            <i class="fa-solid fa-address-card text-brand-500"></i>
+            <span>Quick Facts</span>
+          </h3>
+
+          <div class="space-y-3 text-xs sm:text-sm">
+            <div class="flex items-start justify-between py-2 border-b border-gray-200 dark:border-dark-border/60">
+              <span class="text-gray-500 dark:text-gray-400">Degree</span>
+              <span class="font-semibold text-gray-900 dark:text-white text-right">B.Tech Computer Engineering</span>
+            </div>
+            <div class="flex items-start justify-between py-2 border-b border-gray-200 dark:border-dark-border/60">
+              <span class="text-gray-500 dark:text-gray-400">College</span>
+              <span class="font-semibold text-gray-900 dark:text-white text-right">RCPIT, Shirpur</span>
+            </div>
+            <div class="flex items-start justify-between py-2 border-b border-gray-200 dark:border-dark-border/60">
+              <span class="text-gray-500 dark:text-gray-400">Location</span>
+              <span class="font-semibold text-gray-900 dark:text-white text-right">Chinchkheda Bk, Jalgaon, MH</span>
+            </div>
+            <div class="flex items-start justify-between py-2 border-b border-gray-200 dark:border-dark-border/60">
+              <span class="text-gray-500 dark:text-gray-400">MHT-CET Entrance</span>
+              <span class="font-semibold text-emerald-600 dark:text-emerald-400 text-right">92.91 Percentile</span>
+            </div>
+            <div class="flex items-start justify-between py-2 border-b border-gray-200 dark:border-dark-border/60">
+              <span class="text-gray-500 dark:text-gray-400">SSC (Class 10)</span>
+              <span class="font-semibold text-gray-900 dark:text-white text-right">92.20%</span>
+            </div>
+            <div class="flex items-start justify-between py-2 border-b border-gray-200 dark:border-dark-border/60">
+              <span class="text-gray-500 dark:text-gray-400">Scholarship</span>
+              <span class="font-semibold text-brand-600 dark:text-brand-400 text-right">NMMS National Scholar</span>
+            </div>
+          </div>
+
+          <!-- Highlight Metric Blocks -->
+          <div class="grid grid-cols-2 gap-2 pt-2">
+            <div class="p-3 rounded-xl bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border text-center">
+              <div class="text-base sm:text-lg font-extrabold text-brand-600 dark:text-brand-400 font-mono">2000+</div>
+              <div class="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400">CodeChef Solved</div>
+            </div>
+            <div class="p-3 rounded-xl bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border text-center">
+              <div class="text-base sm:text-lg font-extrabold text-amber-500 font-mono">1000</div>
+              <div class="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400">CodeChef Rating</div>
+            </div>
+            <div class="p-3 rounded-xl bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border text-center">
+              <div class="text-base sm:text-lg font-extrabold text-emerald-500 font-mono">1446</div>
+              <div class="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400">DSA Rating</div>
+            </div>
+            <div class="p-3 rounded-xl bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border text-center">
+              <div class="text-base sm:text-lg font-extrabold text-teal-600 dark:text-teal-400 font-mono">SIH '26</div>
+              <div class="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400">Hackathon Participant</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- TECHNICAL SKILLS SECTION (HONEST, CATEGORIZED, NO FAKE BARS)              -->
+  <!-- ========================================================================= -->
+  <section id="skills" class="py-16 sm:py-20 border-t border-gray-200/70 dark:border-dark-border/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mb-12">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">Technical Competencies</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight mt-1">
+          Skills &amp; Technology Stack
+        </h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Grounded technical capabilities with clear distinctions between strong core languages and foundational web skills.
+        </p>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. Core Languages (Strong) -->
+        <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-gray-200 dark:border-dark-border shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-brand-600 dark:text-brand-400 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-gray-900 dark:text-white">Core Languages</h3>
+              <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">Strong Competency</span>
+            </div>
+          </div>
+          <ul class="space-y-2.5 text-xs text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <i class="fa-brands fa-java text-red-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">Java:</strong> Object-Oriented Programming (OOP), Methods, Classes, Exception Handling
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-c text-blue-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">C Language:</strong> Fundamental logic, syntax, pointers, memory allocation
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-brands fa-python text-amber-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">Python:</strong> Scripting, logic problems, algorithms, backend utilities
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 2. Data Structures & Algorithms (Strong) -->
+        <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-gray-200 dark:border-dark-border shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-gray-900 dark:text-white">DSA &amp; Problem Solving</h3>
+              <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">2000+ Solved &bull; Ratings: 1446 / 1000</span>
+            </div>
+          </div>
+          <ul class="space-y-2.5 text-xs text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-amber-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">CodeChef:</strong> 1000 Rating &bull; 2000+ Solved with 500–1000 rating certificate
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">DSA Competitive Rating:</strong> 1446 Rating across problem solving platforms
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-amber-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">Platforms &amp; Practice:</strong> Daily practice on CodeChef, LeetCode, and GeeksforGeeks
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-amber-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">Key Topics:</strong> Arrays, Strings, Sorting, Searching, Math, Logic Building
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 3. Databases & SQL (Strong) -->
+        <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-gray-200 dark:border-dark-border shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/40 text-teal-600 dark:text-teal-400 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-gray-900 dark:text-white">Databases &amp; SQL</h3>
+              <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">Strong Competency</span>
+            </div>
+          </div>
+          <ul class="space-y-2.5 text-xs text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-teal-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">SQL Queries:</strong> DDL, DML, Table Joins, Aggregate Functions, Filtering
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-teal-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">RDBMS:</strong> Relational Database Design, Primary/Foreign Keys, Normalization
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-teal-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">Systems:</strong> MySQL, SQLite integration with Python backends
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 4. Web Foundations & Currently Learning (Honest) -->
+        <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-gray-200 dark:border-dark-border shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-gray-900 dark:text-white">Web Development</h3>
+              <span class="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-semibold">Foundational &bull; Learning</span>
+            </div>
+          </div>
+          <ul class="space-y-2.5 text-xs text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <i class="fa-brands fa-html5 text-orange-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">HTML5 (Strong):</strong> Semantic tags, forms, tables, web page structure
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-brands fa-css3-alt text-blue-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">CSS3 (Basic / Learning):</strong> Styling, box model, simple layouts, responsive basics
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-brands fa-js text-amber-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">JavaScript (Basic / Learning):</strong> DOM selection, event listeners, basic UI logic
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 5. Developer Tools & Systems -->
+        <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-gray-200 dark:border-dark-border shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-toolbox"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-gray-900 dark:text-white">Tools &amp; Workflow</h3>
+              <span class="text-[11px] font-mono text-gray-500">Development Environment</span>
+            </div>
+          </div>
+          <ul class="space-y-2.5 text-xs text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-code text-brand-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">VS Code:</strong> Primary code editor, extensions, terminal workflow
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-brands fa-git-alt text-orange-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">Git &amp; GitHub:</strong> Version control, commits, branching, repository hosting
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-laptop text-gray-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">Operating Systems:</strong> Windows, command-line operations, basic Linux commands
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 6. Professional Mindset -->
+        <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-gray-200 dark:border-dark-border shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-gray-900 dark:text-white">Strengths &amp; Mindset</h3>
+              <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">Engineering Attributes</span>
+            </div>
+          </div>
+          <ul class="space-y-2.5 text-xs text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">Logical Problem Solving:</strong> Breaking down complex problems into clean steps
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">Fast Learner:</strong> Rapidly absorbing new languages and framework concepts
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+              <div>
+                <strong class="text-gray-900 dark:text-white">Collaborative:</strong> Team hackathon experience (SIH 2026) and internship teamwork
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- FEATURED PROJECTS SECTION                                                 -->
+  <!-- ========================================================================= -->
+  <section id="projects" class="py-16 sm:py-20 border-t border-gray-200/70 dark:border-dark-border/70 bg-white dark:bg-dark-card/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header & Filter Buttons -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="max-w-xl">
+          <span class="text-xs font-mono font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">Practical Work</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight mt-1">
+            Featured Projects
+          </h2>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            Real software and web applications demonstrating problem solving, database integration, and UI design.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button data-filter="all" class="project-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all bg-brand-600 text-white shadow-sm">All</button>
+          <button data-filter="python" class="project-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all bg-gray-100 dark:bg-dark-surface text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-border">Python &amp; Systems</button>
+          <button data-filter="web" class="project-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all bg-gray-100 dark:bg-dark-surface text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-border">Web Projects</button>
+          <button data-filter="data" class="project-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all bg-gray-100 dark:bg-dark-surface text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-border">Database &amp; SQL</button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+
+        <!-- Project 1: Safe Signal (Community Safety) -->
+        <div class="project-card bg-gray-50 dark:bg-dark-card rounded-2xl p-6 sm:p-7 border border-gray-200 dark:border-dark-border flex flex-col justify-between hover:border-brand-500/50 transition-all shadow-sm" data-category="web">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-mono font-semibold px-2.5 py-1 rounded bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-rose-900/50">
+                <i class="fa-solid fa-shield-heart mr-1"></i> Women's Safety
+              </span>
+              <span class="text-xs text-gray-400 font-mono">Web Application</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Safe Signal – Personal Safety Application</h3>
+            
+            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-2.5 leading-relaxed">
+              A dedicated web application designed to support women's and personal safety in emergencies. Provides one-touch Emergency SOS alert dispatch, live GPS geolocation sharing with trusted emergency contacts, and an accessible crisis UI.
+            </p>
+
+            <ul class="mt-4 space-y-1.5 text-xs text-gray-500 dark:text-gray-400">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500 text-[10px]"></i> One-tap instant emergency SOS signaling</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500 text-[10px]"></i> Real-time location sharing via Geolocation API</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500 text-[10px]"></i> Quick-dial emergency contact directory</li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-200 dark:border-dark-border/60 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border">HTML5</span>
+              <span class="px-2 py-0.5 rounded bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border">CSS3</span>
+              <span class="px-2 py-0.5 rounded bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border">JavaScript</span>
+            </div>
+            <a href="https://github.com/tejashripatil115" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+              <span>View Code</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: AI Based Resume Analyzer -->
+        <div class="project-card bg-gray-50 dark:bg-dark-card rounded-2xl p-6 sm:p-7 border border-gray-200 dark:border-dark-border flex flex-col justify-between hover:border-brand-500/50 transition-all shadow-sm" data-category="python data web">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-mono font-semibold px-2.5 py-1 rounded bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-900/50">
+                <i class="fa-solid fa-file-invoice mr-1"></i> Resume AI &amp; NLP
+              </span>
+              <span class="text-xs text-gray-400 font-mono">Python / SQL</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">AI Based Resume Analyzer</h3>
+            
+            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-2.5 leading-relaxed">
+              An intelligent utility that automatically evaluates resumes against job descriptions. Extracts candidate skills, education, and experience, compares keywords against role requirements, calculates candidate match scores, and provides actionable recommendations.
+            </p>
+
+            <ul class="mt-4 space-y-1.5 text-xs text-gray-500 dark:text-gray-400">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500 text-[10px]"></i> Automated skill &amp; education extraction</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500 text-[10px]"></i> Resume vs Job Description keyword matching</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500 text-[10px]"></i> SQLite / MySQL candidate profile storage</li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-200 dark:border-dark-border/60 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border">Python</span>
+              <span class="px-2 py-0.5 rounded bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border">SQL</span>
+              <span class="px-2 py-0.5 rounded bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border">HTML/CSS</span>
+            </div>
+            <a href="https://github.com/tejashripatil115" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+              <span>View Code</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: E-Commerce System (Verified GitHub link) -->
+        <div class="project-card bg-gray-50 dark:bg-dark-card rounded-2xl p-6 sm:p-7 border border-gray-200 dark:border-dark-border flex flex-col justify-between hover:border-brand-500/50 transition-all shadow-sm" data-category="python data web">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-mono font-semibold px-2.5 py-1 rounded bg-teal-50 dark:bg-teal-950/40 text-teal-600 dark:text-teal-300 border border-teal-200 dark:border-teal-900/50">
+                <i class="fa-solid fa-cart-shopping mr-1"></i> E-Commerce Architecture
+              </span>
+              <span class="text-xs text-gray-400 font-mono">Python Backend</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Python E-Commerce Management System</h3>
+            
+            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-2.5 leading-relaxed">
+              A comprehensive Python-based e-commerce solution for managing products, customer profiles, shopping cart state, and online checkout operations. Demonstrates database operations and backend logic for real shopping workflows.
+            </p>
+
+            <ul class="mt-4 space-y-1.5 text-xs text-gray-500 dark:text-gray-400">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500 text-[10px]"></i> Product catalog management &amp; search filtering</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500 text-[10px]"></i> Shopping cart logic and order computation</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500 text-[10px]"></i> Clean database structure for customer records</li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-200 dark:border-dark-border/60 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border">Python</span>
+              <span class="px-2 py-0.5 rounded bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border">HTML</span>
+              <span class="px-2 py-0.5 rounded bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border">CSS</span>
+              <span class="px-2 py-0.5 rounded bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border">JS</span>
+            </div>
+            <a href="https://github.com/tejashripatil115/E-Commerce-System/tree/main" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+              <span>GitHub Repo</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Developer Portfolio -->
+        <div class="project-card bg-gray-50 dark:bg-dark-card rounded-2xl p-6 sm:p-7 border border-gray-200 dark:border-dark-border flex flex-col justify-between hover:border-brand-500/50 transition-all shadow-sm" data-category="web">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-mono font-semibold px-2.5 py-1 rounded bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50">
+                <i class="fa-solid fa-laptop-code mr-1"></i> Personal Portfolio
+              </span>
+              <span class="text-xs text-gray-400 font-mono">Clean &amp; Lightweight</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Clean Personal Developer Portfolio</h3>
+            
+            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-2.5 leading-relaxed">
+              A responsive, lightweight developer portfolio designed with simplicity and authenticity. Contains zero bloated dependencies, features native Dark/Light mode switching, responsive navigation, and an interactive printable CV modal.
+            </p>
+
+            <ul class="mt-4 space-y-1.5 text-xs text-gray-500 dark:text-gray-400">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500 text-[10px]"></i> Zero framework bloat &bull; Instant fast loading</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500 text-[10px]"></i> Native print-to-PDF resume generator</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500 text-[10px]"></i> 100% responsive across mobile and desktop</li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-200 dark:border-dark-border/60 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border">HTML5</span>
+              <span class="px-2 py-0.5 rounded bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border">CSS3</span>
+              <span class="px-2 py-0.5 rounded bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border">Vanilla JS</span>
+            </div>
+            <a href="https://github.com/tejashripatil115" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+              <span>View Code</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- EXPERIENCE & INDUSTRY SIMULATIONS                                         -->
+  <!-- ========================================================================= -->
+  <section id="experience" class="py-16 sm:py-20 border-t border-gray-200/70 dark:border-dark-border/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mb-12">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">Industry Exposure</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight mt-1">
+          Internships, Hackathons &amp; Simulations
+        </h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Hands-on collaborative projects, national hackathons, and corporate job simulations.
+        </p>
+      </div>
+
+      <!-- Experience Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Experience 1: CodeAlpha -->
+        <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-gray-200 dark:border-dark-border shadow-sm">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <div>
+              <span class="text-xs font-mono font-semibold text-brand-600 dark:text-brand-400">Internship</span>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">Software Development Intern</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400">CodeAlpha</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-100 dark:bg-dark-surface text-gray-600 dark:text-gray-300">
+              Remote
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed mt-3">
+            Gained practical software engineering experience by building structured programming tasks, writing clean modular code, testing logic, and collaborating under mentor guidance.
+          </p>
+        </div>
+
+        <!-- Experience 2: Smart India Hackathon (SIH 2026) -->
+        <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-gray-200 dark:border-dark-border shadow-sm">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <div>
+              <span class="text-xs font-mono font-semibold text-purple-600 dark:text-purple-400">National Hackathon</span>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">Smart India Hackathon (SIH 2026)</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400">Government of India / AICTE</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-300">
+              2026
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed mt-3">
+            Participated in India's biggest open innovation hackathon. Collaborated with a collegiate engineering team to solve a real-world problem statement, contributing to system ideation, rapid prototyping, and architecture.
+          </p>
+        </div>
+
+        <!-- Experience 3: Deloitte Cyber Security Simulation -->
+        <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-gray-200 dark:border-dark-border shadow-sm">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <div>
+              <span class="text-xs font-mono font-semibold text-teal-600 dark:text-teal-400">Job Simulation</span>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">Deloitte Cyber Security Simulation</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400">Deloitte (via Forage)</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-100 dark:bg-dark-surface text-gray-600 dark:text-gray-300">
+              Verified
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed mt-3">
+            Completed practical modules analyzing enterprise cyber security protocols, vulnerability assessments, forensic log examination, and formulating defense strategies.
+          </p>
+        </div>
+
+        <!-- Experience 4: Deloitte Data Analytics Simulation -->
+        <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-gray-200 dark:border-dark-border shadow-sm">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <div>
+              <span class="text-xs font-mono font-semibold text-teal-600 dark:text-teal-400">Job Simulation</span>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">Deloitte Data Analytics Simulation</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400">Deloitte (via Forage)</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-100 dark:bg-dark-surface text-gray-600 dark:text-gray-300">
+              Verified
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed mt-3">
+            Performed data cleaning, structured database querying, trend analysis, and synthesized quantitative findings into clear business intelligence reports.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- EDUCATION & ACADEMIC ACHIEVEMENTS                                         -->
+  <!-- ========================================================================= -->
+  <section id="education" class="py-16 sm:py-20 border-t border-gray-200/70 dark:border-dark-border/70 bg-white dark:bg-dark-card/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Left: Education Timeline -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="mb-4">
+            <span class="text-xs font-mono font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">Academic Background</span>
+            <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white tracking-tight mt-1">
+              Education
+            </h2>
+          </div>
+
+          <div class="space-y-4">
+            
+            <!-- Degree 1: B.Tech Computer Engineering -->
+            <div class="p-5 rounded-2xl bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h3 class="text-base font-bold text-gray-900 dark:text-white">B.Tech in Computer Engineering</h3>
+                  <div class="text-xs font-semibold text-brand-600 dark:text-brand-400 mt-0.5">2nd Year Student (Class of 2029)</div>
+                  <div class="text-xs text-gray-600 dark:text-gray-300 mt-1">R.C. Patel Institute of Technology, Shirpur (RCPIT)</div>
+                </div>
+                <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-brand-50 dark:bg-brand-950/40 text-brand-600 dark:text-brand-300">
+                  2025 – 2029
+                </span>
+              </div>
+              <p class="text-xs text-gray-500 dark:text-gray-400 mt-2.5">
+                Core Coursework: Data Structures &amp; Algorithms, Object-Oriented Programming (Java/C++), Database Management Systems (DBMS), Operating Systems, Discrete Math.
+              </p>
+            </div>
+
+            <!-- Degree 2: Class 12th HSC -->
+            <div class="p-5 rounded-2xl bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h3 class="text-base font-bold text-gray-900 dark:text-white">Higher Secondary Certificate (Class 12th HSC)</h3>
+                  <div class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 mt-0.5">77 Percentile</div>
+                  <div class="text-xs text-gray-600 dark:text-gray-300 mt-1">Janta High School and Junior College, Neri</div>
+                </div>
+                <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-gray-100 dark:bg-dark-surface text-gray-600 dark:text-gray-300">
+                  2025
+                </span>
+              </div>
+            </div>
+
+            <!-- Degree 3: Class 10th SSC -->
+            <div class="p-5 rounded-2xl bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h3 class="text-base font-bold text-gray-900 dark:text-white">Secondary School Certificate (Class 10th SSC)</h3>
+                  <div class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 mt-0.5">92.20 Percentile (Distinction)</div>
+                  <div class="text-xs text-gray-600 dark:text-gray-300 mt-1">Janta High School and Kanishth Mahavidyalay, Neri</div>
+                </div>
+                <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-gray-100 dark:bg-dark-surface text-gray-600 dark:text-gray-300">
+                  2023
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Verified Milestones & Achievements -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="mb-4">
+            <span class="text-xs font-mono font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">Recognition</span>
+            <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white tracking-tight mt-1">
+              Achievements
+            </h2>
+          </div>
+
+          <div class="space-y-3.5">
+            
+            <div class="p-4 rounded-xl bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0 text-sm">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-gray-900 dark:text-white">2000+ CodeChef Solved &bull; 1000 Rating &bull; 1446 DSA</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                  Achieved a 1000 rating on CodeChef with a 500–1000 rating certificate, and holds a 1446 DSA competitive rating.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0 text-sm">
+                <i class="fa-solid fa-medal"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-gray-900 dark:text-white">MHT-CET: 92.91 Percentile</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                  Scored 92.91 percentile in MHT-CET and 70 percentile in JEE Main, securing merit admission into RCPIT Computer Engineering.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center shrink-0 text-sm">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-gray-900 dark:text-white">NMMS National Scholarship</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                  Recipient of the prestigious National Means-cum-Merit Scholarship (NMMS) awarded for academic excellence.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center shrink-0 text-sm">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-gray-900 dark:text-white">Infosys SpringBoard (Cohort 9)</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                  Selected for Infosys SpringBoard Cohort 9 technical training curriculum.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-500 flex items-center justify-center shrink-0 text-sm">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-gray-900 dark:text-white">TATA Crucible Campus Quiz</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                  Participated in the premier national campus knowledge competition.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- CONTACT SECTION                                                           -->
+  <!-- ========================================================================= -->
+  <section id="contact" class="py-16 sm:py-20 border-t border-gray-200/70 dark:border-dark-border/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mb-12">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">Get In Touch</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight mt-1">
+          Let's Connect
+        </h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Feel free to reach out for software development internships, project collaborations, or technical opportunities.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Left: Direct Contact Information -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Email Card -->
+          <div class="p-5 rounded-2xl bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center text-lg shrink-0">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <span class="text-[11px] font-mono text-gray-400 uppercase">Email</span>
+                <a href="mailto:tejashrip31@gmail.com" class="block text-sm font-semibold text-gray-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                  tejashrip31@gmail.com
+                </a>
+              </div>
+            </div>
+            <button onclick="copyToClipboard('tejashrip31@gmail.com', 'Email copied!')" class="p-2 text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors" title="Copy Email">
+              <i class="fa-regular fa-copy text-sm"></i>
+            </button>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="p-5 rounded-2xl bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <span class="text-[11px] font-mono text-gray-400 uppercase">Phone</span>
+                <a href="tel:+919272096193" class="block text-sm font-semibold text-gray-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                  +91 9272096193
+                </a>
+              </div>
+            </div>
+            <button onclick="copyToClipboard('+919272096193', 'Phone copied!')" class="p-2 text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors" title="Copy Phone">
+              <i class="fa-regular fa-copy text-sm"></i>
+            </button>
+          </div>
+
+          <!-- Location Card -->
+          <div class="p-5 rounded-2xl bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border flex items-center gap-3.5 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-lg shrink-0">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <span class="text-[11px] font-mono text-gray-400 uppercase">Location</span>
+              <p class="text-sm font-semibold text-gray-900 dark:text-white">Chinchkheda Bk, Dist: Jalgaon</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">Maharashtra, India (Pin: 425114)</p>
+            </div>
+          </div>
+
+          <!-- Quick WhatsApp Link -->
+          <a 
+            href="https://wa.me/919272096193" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="w-full py-3.5 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-md transition-all">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Message on WhatsApp</span>
+          </a>
+
+        </div>
+
+        <!-- Right: Message Form -->
+        <div class="lg:col-span-7 bg-white dark:bg-dark-card rounded-3xl p-6 sm:p-8 border border-gray-200 dark:border-dark-border shadow-sm">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Send a Message</h3>
+          
+          <form id="contact-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">Your Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  required 
+                  placeholder="e.g. Rahul Sharma"
+                  class="w-full px-4 py-2.5 rounded-xl bg-gray-50 dark:bg-dark-surface border border-gray-200 dark:border-dark-border text-sm text-gray-900 dark:text-white focus:outline-none focus:border-brand-500 transition-colors"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">Your Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  required 
+                  placeholder="rahul@example.com"
+                  class="w-full px-4 py-2.5 rounded-xl bg-gray-50 dark:bg-dark-surface border border-gray-200 dark:border-dark-border text-sm text-gray-900 dark:text-white focus:outline-none focus:border-brand-500 transition-colors"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="subject" class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">Subject</label>
+              <input 
+                type="text" 
+                id="subject" 
+                placeholder="Software Internship / Project Inquiry"
+                class="w-full px-4 py-2.5 rounded-xl bg-gray-50 dark:bg-dark-surface border border-gray-200 dark:border-dark-border text-sm text-gray-900 dark:text-white focus:outline-none focus:border-brand-500 transition-colors"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">Message</label>
+              <textarea 
+                id="message" 
+                rows="4" 
+                required 
+                placeholder="Write your message here..."
+                class="w-full px-4 py-2.5 rounded-xl bg-gray-50 dark:bg-dark-surface border border-gray-200 dark:border-dark-border text-sm text-gray-900 dark:text-white focus:outline-none focus:border-brand-500 transition-colors resize-none"
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm transition-all shadow-md flex items-center justify-center gap-2">
+              <i class="fa-regular fa-paper-plane"></i>
+              <span>Send Message</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER                                                                    -->
+  <!-- ========================================================================= -->
+  <footer class="py-10 border-t border-gray-200 dark:border-dark-border bg-white dark:bg-dark-bg text-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center font-bold text-xs">
+          TP
+        </div>
+        <div>
+          <div class="font-bold text-gray-900 dark:text-white text-xs">Tejashri Dnyandev Patil</div>
+          <div class="text-[11px] text-gray-400">&copy; 2026 Tejashri Patil &bull; Computer Engineering, RCPIT Shirpur</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-5 text-xs text-gray-500 dark:text-gray-400">
+        <a href="#home" class="hover:text-brand-600 transition-colors">Home</a>
+        <a href="#about" class="hover:text-brand-600 transition-colors">About</a>
+        <a href="#skills" class="hover:text-brand-600 transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-brand-600 transition-colors">Projects</a>
+        <a href="#contact" class="hover:text-brand-600 transition-colors">Contact</a>
+      </div>
+
+      <a href="#home" aria-label="Back to top" class="w-9 h-9 rounded-lg bg-gray-100 dark:bg-dark-surface border border-gray-200 dark:border-dark-border flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-brand-600 transition-all">
+        <i class="fa-solid fa-arrow-up text-xs"></i>
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- PRINTABLE RESUME / CV MODAL                                               -->
+  <!-- ========================================================================= -->
+  <div id="resume-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+    <div class="relative w-full max-w-3xl max-h-[92vh] bg-white dark:bg-dark-card rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-dark-border">
+      
+      <!-- Modal Top Action Bar -->
+      <div class="p-4 border-b border-gray-200 dark:border-dark-border flex items-center justify-between bg-gray-50 dark:bg-dark-surface">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-file-lines text-brand-600"></i>
+          <span class="font-bold text-sm text-gray-900 dark:text-white">Curriculum Vitae – Tejashri Patil</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-brand-600 text-white hover:bg-brand-700 transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-print"></i>
+            <span>Print / Save as PDF</span>
+          </button>
+          <button onclick="closeResumeModal()" class="w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-gray-700 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-dark-card transition-all">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Printable Resume Body -->
+      <div id="printable-resume" class="p-8 overflow-y-auto space-y-6 text-gray-800 dark:text-gray-200 text-xs">
+        
+        <!-- Header details with photo thumbnail -->
+        <div class="border-b border-gray-200 dark:border-dark-border pb-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div class="flex items-center gap-4">
+            <img 
+              src="profile.jpg" 
+              alt="Tejashri Patil" 
+              class="w-16 h-16 rounded-xl object-cover object-top border border-gray-300 dark:border-dark-border shadow-sm"
+              onerror="this.style.display='none'"
+            />
+            <div>
+              <h1 class="text-xl font-extrabold text-gray-900 dark:text-white">TEJASHRI PATIL</h1>
+              <p class="text-brand-600 dark:text-brand-400 font-semibold text-sm">B.Tech Computer Engineering Student &bull; 2nd Year (Class of 2029)</p>
+              <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">Chinchkheda Bk, Dist: Jalgaon, Maharashtra, India (Pin: 425114)</p>
+            </div>
+          </div>
+          <div class="space-y-1 text-gray-600 dark:text-gray-300 sm:text-right">
+            <div><i class="fa-solid fa-phone text-emerald-500 mr-1.5"></i> +91 9272096193</div>
+            <div><i class="fa-solid fa-envelope text-brand-500 mr-1.5"></i> tejashrip31@gmail.com</div>
+            <div><i class="fa-brands fa-linkedin text-blue-500 mr-1.5"></i> linkedin.com/in/tejashri-patil-79966638a</div>
+            <div><i class="fa-brands fa-github text-gray-700 dark:text-gray-300 mr-1.5"></i> github.com/tejashripatil115</div>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 font-mono mb-1.5">Professional Summary</h4>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Second-year B.Tech Computer Engineering student at R.C. Patel Institute of Technology, Shirpur with strong programming and problem-solving skills. Solved <strong>2000+ problems on CodeChef</strong> with a <strong>1000 CodeChef Rating</strong> and a <strong>1446 DSA Rating</strong> (500–1000 rating achievement certificate). Proficient in Java, C, Python, SQL, and database management, with practical foundations in HTML and ongoing learning in CSS and JavaScript. Experienced in building projects and gaining industry exposure through a CodeAlpha internship, Smart India Hackathon 2026, and Deloitte job simulations.
+          </p>
+        </div>
+
+        <!-- Education -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 font-mono mb-2">Education</h4>
+          <div class="space-y-2">
+            <div class="flex justify-between items-start">
+              <div>
+                <div class="font-bold text-gray-900 dark:text-white">R.C. Patel Institute of Technology, Shirpur</div>
+                <div class="text-gray-500">B.Tech in Computer Engineering – 2nd Year (Class of 2029)</div>
+              </div>
+              <div class="font-mono text-gray-400">2025 – 2029</div>
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <div class="font-bold text-gray-900 dark:text-white">Janta High School and Junior College, Neri</div>
+                <div class="text-gray-500">Class 12th (HSC) – 77 Percentile</div>
+              </div>
+              <div class="font-mono text-gray-400">2025</div>
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <div class="font-bold text-gray-900 dark:text-white">Janta High School and Kanishth Mahavidyalay, Neri</div>
+                <div class="text-gray-500">Class 10th (SSC) – 92.20 Percentile (Distinction)</div>
+              </div>
+              <div class="font-mono text-gray-400">2023</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 font-mono mb-2">Technical Skills</h4>
+          <div class="space-y-1.5 text-gray-600 dark:text-gray-300">
+            <div><strong>Languages:</strong> Java, C, Python</div>
+            <div><strong>Problem Solving &amp; DSA:</strong> Data Structures &amp; Algorithms (2000+ Solved on CodeChef &bull; Rating: 1000 &bull; DSA Rating: 1446)</div>
+            <div><strong>Databases:</strong> SQL, Relational Database Management (MySQL, SQLite)</div>
+            <div><strong>Web Technologies:</strong> HTML5 (Strong), CSS3 (Foundational), JavaScript (Foundational)</div>
+            <div><strong>Developer Tools:</strong> VS Code, Git, GitHub</div>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 font-mono mb-2">Projects</h4>
+          <div class="space-y-2.5">
+            <div>
+              <div class="font-bold text-gray-900 dark:text-white">Safe Signal – Personal Safety Application</div>
+              <div class="text-gray-500">Technologies: HTML, CSS, JavaScript</div>
+              <p class="text-gray-600 dark:text-gray-300 mt-0.5">Women's emergency web application with instant SOS dispatch and live location sharing with emergency contacts.</p>
+            </div>
+            <div>
+              <div class="font-bold text-gray-900 dark:text-white">AI Based Resume Analyzer</div>
+              <div class="text-gray-500">Technologies: Python, SQL, HTML, CSS, JavaScript</div>
+              <p class="text-gray-600 dark:text-gray-300 mt-0.5">Automated resume parser comparing candidate skills with job descriptions and computing match scores.</p>
+            </div>
+            <div>
+              <div class="font-bold text-gray-900 dark:text-white">E-Commerce System</div>
+              <div class="text-gray-500">Technologies: Python, SQL, HTML, CSS, JavaScript, VS Code</div>
+              <p class="text-gray-600 dark:text-gray-300 mt-0.5">Python e-commerce application managing product inventories, shopping carts, and customer transactions.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience & Achievements -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 font-mono mb-2">Experience &amp; Key Achievements</h4>
+          <ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
+            <li><strong>CodeAlpha:</strong> Software Development Intern (Remote)</li>
+            <li><strong>Smart India Hackathon (SIH 2026):</strong> National team participant</li>
+            <li><strong>CodeChef &amp; DSA:</strong> 2000+ Problems Solved &bull; 1000 CodeChef Rating &bull; 1446 DSA Rating &bull; 500–1000 Rating Certificate</li>
+            <li><strong>Entrance Exam:</strong> MHT-CET 92.91 Percentile &bull; JEE Main 70 Percentile</li>
+            <li><strong>National Scholarship:</strong> NMMS (National Means-cum-Merit Scholarship) Recipient</li>
+            <li><strong>Job Simulations:</strong> Deloitte Cyber Security &amp; Deloitte Data Analytics (Forage)</li>
+            <li><strong>Infosys SpringBoard:</strong> Selected for Cohort 9</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-3 rounded-xl bg-gray-900 text-white text-xs font-medium shadow-xl border border-gray-700 flex items-center gap-2 transition-all">
+    <i id="toast-icon" class="fa-solid fa-check text-emerald-400"></i>
+    <span id="toast-message">Action successful</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
